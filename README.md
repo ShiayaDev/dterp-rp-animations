@@ -27,10 +27,6 @@ A high-quality FiveM script that adds fully synced roleplay animations including
 | Point    | B          |
 | Hands Up | X          |
 
-Players can change these in:
-
-**Settings → Keybinds → FiveM**
-
 ## Restrictions
 
 Animations are automatically disabled when:
