@@ -139,7 +139,7 @@ RegisterNetEvent('dterp:togglePoint', function()
     end
 end)
 
-AddStateBagChangeHandler("isPointing", nil, function(bagName, key, value, _, replicated)
+AddStateBagChangeHandler("isPointing", "", function(bagName, key, value, _, replicated)
     if not replicated then return end
 
     local entity = GetEntityFromStateBagName(bagName)
@@ -218,7 +218,7 @@ RegisterNetEvent('dterp:toggleHandsUp', function()
         stopHandsUp(ped)
     end
 end)
-AddStateBagChangeHandler("handsUp", nil, function(bagName, key, value, _, replicated)
+AddStateBagChangeHandler("handsUp", "", function(bagName, key, value, _, replicated)
     if not replicated then return end
 
     local entity = GetEntityFromStateBagName(bagName)
@@ -255,6 +255,7 @@ end)
 -- =========================
 CreateThread(function()
     while true do
+        Wait(0) -- Run every frame to ensure instant cancel on invalid states
         local sleep = 1000
         local ped = PlayerPedId()
 
